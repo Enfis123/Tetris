@@ -1,0 +1,15 @@
+
+Jugador: OSU	Puntaje: 6000
+Jugador: om	Puntaje: 200
+Jugador: DAN	Puntaje: 2400
+Jugador: X	Puntaje: 1800
+Jugador: xd	Puntaje: 2700
+Jugador: pal	Puntaje: 4000
+Jugador: GG	Puntaje: 4000
+Jugador: wow	Puntaje: 2700
+Jugador: gal	Puntaje: 2700
+Jugador: dad	Puntaje: 100
+Jugador: NANI	Puntaje: 2700
+Jugador: JAVI	Puntaje: 0
+Jugador: 112	Puntaje: 0
+Jugador: ptm	Puntaje: 4000

@@ -1,0 +1,152 @@
+@startuml
+hide circle
+'https://plantuml.com/class-diagram
+
+class Figura{
+    piezaForma : Figuras
+    coordenadas[][] : int
+    coordenadasFigura : int[][][]
+    setX(indice : int, x : int)
+    setY(indice : int , y : int )
+    getx(indice : int)
+    gety(indice : int)
+    getFigura() : Figura
+    setForma(forma : Figuras)
+    setFormaAleatoria()
+    minY() : int
+    rotarIzquierda() : Figura
+    rotarDerecha() : Figura
+}
+
+'class PiezaL {
+'dimension
+'}
+'
+'class PiezaS {
+'dimension
+'}
+'class PiezaC {
+'dimension
+'}
+'class PiezaI {
+'dimension
+'}
+
+'PiezaL --|> Figura
+'PiezaS --|> Figura
+'PiezaC --|> Figura
+'PiezaI --|> Figura
+'PiezaT --|> Figura
+
+class Tablero{
+    formaTab : TableroForma
+    difucultad : Dificultad
+    tetris : JPanel
+    menuPausa : MenuPausa
+    anchodeCuadricula : int
+    alturaCuadricula : int
+    tiempo : Timer
+    enPausa : boolean
+    lineasRemovidas : int
+    ejeX : int
+    ejeY : int
+    puntajeBarra : JLabel
+    nivel JLabel
+    figura : Figura
+    moverPiezaTeclado()
+    anchodeCuadro() : int
+    alturadeCuadro() : int
+    setConstructorTablero (tetris JPanel ,tableroForma : TableroForma )
+    comenzar()
+    comenzarCargado()
+    pausa()
+    asignarPuntaje(lineasRemovidas : int ) : int
+    caer()
+    bajarFigura()
+    iniciarTablero()
+    invocarPieza()
+    posicionarPieza()
+    terminarJuego()
+    guardarPuntuacion()
+    escribirArchivoPuntaciones(archivoPuntajes : String ,mensaje : String )
+    comprobarMovimiento(nuevaFigura : Figura ,nuevoX : int ,nuevoY : int)
+    moverFigura(nuevaFigura : Figura,,nuevoX : int ,nuevoY : int)
+    removerLineasLlenas()
+    paint(g : Graphics)
+    dibujarCuadro(g : Graphics,x : int,y : int,pieza : Figura.Figuras)
+
+}
+
+class Leaderboard{
+    listaJugadores : ArrayList<String>
+    Leaderboard : JPanel
+    puntajes : JTextArea
+    frame : JFrame
+    archivoPuntajes : String
+    añadirPuntajes()
+    rediseñarLista(listaPuntajes : ArrayList<String> ) : String
+    leerArchivoPuntaje(archivoPuntajes : String ) : ArrayList<String>
+    iniciar()
+}
+ class Dificultad{
+    nivelBarra : JLabel
+    tiempo : Timer
+    lineasRemovidas : int
+    asignarDificultad() : int
+}
+
+class MenuPausa{
+    forma : TableroForma
+    tetris : JPanel
+    tablero : Tablero
+    guardarButton : JButton
+    salirButton : JButton
+    Pausa : JPanel
+    frame : JFrame
+    archivoGuardar : String
+    iniciar()
+    guardarPartida()
+    guardarArchivoPartida(archivoDeGuardado : String ,tablero : Tablero )
+    cerrarMenu()
+}
+class Tetris{
+    frame : JFrame
+    SALIRButton : JButton
+    PUNTUACIONESButton : JButton
+    NUEVOJUEGOButton : JButton
+    CARGARPARTIDAButton : JButton
+    Tetris : JPanel
+    archivoGuardar : String
+    iniciarJuego()
+    cargarPartida()
+    mostrarPuntuaciones()
+    salirJuego()
+    cargarArchivoPartida(guardar : String) : Tablero
+    iniciarInterfaz()
+    musica()
+}
+
+class TableroForma{
+    tetris : JPanel
+    puntajeBarra : JLabel
+    nivel : JLabel
+    añadirNivelBarra()
+    añadirPuntajeBarra()
+    getPuntajeBarra() : JLabel
+    getNivel() : JLabel
+}
+Tetris-->TableroForma
+TableroForma-->Tablero
+Tablero----> MenuPausa
+Tablero --> Dificultad
+Tablero ---> Figura
+Leaderboard <--Tetris
+
+
+
+
+
+
+
+
+@enduml
